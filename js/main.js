@@ -29,6 +29,7 @@ button.addEventListener("click", handleClickButton);
 function handleClickButton(){
     //comprobar el numero
     checkNum();
+    counterMoney();
     
 }
 
@@ -36,14 +37,24 @@ function handleClickButton(){
 function checkNum(){
     const num = parseInt (selectNum.value);
     console.log("the input numb " + num);
-    if(num <1 || num > 6) {
-        playText.innerHTML="El número tiene que ser de 1 a 6";
-    }else if (num === randomNum){
-        playText.innerHTML="¡Has ganado!";
+    if (num === randomNum){
+        playText.innerHTML="¡Has ganado el doble de lo apostado";
     }else if(num!==randomNum){
-        playText.innerHTML="Has perdido :("
+        playText.innerHTML="Has perdido lo apostado:("
     }
+}
+function counterMoney(){
+    
+    const money=parseInt(inputNum.value);
+    const number = parseInt (selectNum.value);
+
+    console.log("money left is: " + money);
+    if(number === randomNum){
+        leftover.innerHTML="Saldo: " + (leftover*2);
+    }else if(number!==randomNum){
+        leftover.innerHTML="Saldo: " + (leftover-inputNum);
     }
+}
 
 
 
