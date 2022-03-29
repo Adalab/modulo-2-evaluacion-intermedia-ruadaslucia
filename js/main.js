@@ -12,6 +12,9 @@ const playText = document.querySelector('.js-goPlay');
 //texto saldo restante
 const leftover = document.querySelector('.js-moneyLeft');
 
+//boton try again
+const btnReset =document.querySelector('.js-tryAgain');
+
 
 
 const randomNum = getRandomNumber (6);
@@ -40,7 +43,7 @@ function checkNum(){
     if (num === randomNum){
         playText.innerHTML="¡Has ganado el doble de lo apostado";
     }else if(num!==randomNum){
-        playText.innerHTML="Has perdido lo apostado:("
+        playText.innerHTML="Has perdido lo apostado:(";
     }
 }
 function counterMoney(){

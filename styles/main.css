@@ -3,6 +3,9 @@
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
+.hiden {
+  display: none;
+}
 .main {
   padding: 50px;
   display: flex;
