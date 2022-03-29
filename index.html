@@ -12,8 +12,8 @@
       <h1 class="title">Dados y Apuestas</h1>
       <p class="text">Introduce aquí tu jugada:</p>
       <form class="form js-form">
-        <select name="select" class="select js-select">
-          <option></option>
+        <select name="select" class="select js-selectBox">
+          <option>Qué número apuestas del 1 al 6</option>
           <option value="one">1</option>
           <option value="two">2</option>
           <option value="three">3</option>
@@ -21,10 +21,12 @@
           <option value="five">5</option>
           <option value="six">6</option>
         </select>
+        <input type="text" value="¿Cuanto apuestas?" />
 
         <button class="button js-button">Jugar</button>
 
         <p class="indication js-goPlay">Vamos a Jugar!</p>
+        <p class="player js-moneyLeft">Saldo: 50</p>
       </form>
     </main>
     <script src="./js/main.js"></script>
