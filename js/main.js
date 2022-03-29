@@ -2,9 +2,9 @@
 //declarar constantes que me hace falta traer de html
 
 //caja de seleccion
-const select = document.querySelector('.js-selectBox');
+const selectNum = document.querySelector('.js-selectBox');
 //caja intro apuesta
-const imputNum = document.querySelector('.js-inputNum');
+const inputNum = document.querySelector('.js-inputNum');
 //boton jugar
 const button = document.querySelector('.js-button');
 //texto cambiante
@@ -14,13 +14,13 @@ const leftover = document.querySelector('.js-moneyLeft');
 
 
 
-const randomNum = getRandomNumber (100);
+const randomNum = getRandomNumber (6);
 let cont = 0;
 //----funciones
 
 function getRandomNumber (max){
     return Math.ceil(Math.random()*max);
-} //funciona
+} //---------------------------------------funciona
 console.log("random number: " + randomNum);
 
 //evento click en boton
@@ -29,12 +29,22 @@ button.addEventListener("click", handleClickButton);
 function handleClickButton(){
     //comprobar el numero
     checkNum();
-    //con cada click aumenta el contador
-    sumCont();
+    
 }
 
 //checkNum();
+function checkNum(){
+    const num = parseInt (selectNum.value);
+    console.log("the input numb " + num);
+    if(num <1 || num > 6) {
+        playText.innerHTML="El número tiene que ser de 1 a 6";
+    }else if (num === randomNum){
+        playText.innerHTML="¡Has ganado!";
+    }else if(num!==randomNum){
+        playText.innerHTML="Has perdido :("
+    }
+    }
 
 
 
-//sumcont();
+    
