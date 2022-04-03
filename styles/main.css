@@ -6,12 +6,14 @@
 .hiden {
   display: none;
 }
-.main {
-  padding: 50px;
+.main{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.container {
+  padding: 50px;
   background-color: white;
   border: solid green 5px;
   width: fit-content;

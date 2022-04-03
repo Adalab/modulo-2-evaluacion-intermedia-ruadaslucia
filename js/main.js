@@ -11,26 +11,27 @@ const button = document.querySelector('.js-button');
 const playText = document.querySelector('.js-goPlay');
 //texto saldo restante
 const leftover = document.querySelector('.js-moneyLeft');
-
 //boton try again
 const btnReset =document.querySelector('.js-tryAgain');
 
+const maxNum=6;
+const randomNum=getRandomNumber(maxNum);
 
-
-const randomNum = getRandomNumber (6);
-let cont = 0;
+const winningMessage = "¡Has ganado el doble de lo apostado";
+const losingMessage = "Has perdido lo apostado:(";
 //----funciones
 
 function getRandomNumber (max){
     return Math.ceil(Math.random()*max);
 } //---------------------------------------funciona
-console.log("random number: " + randomNum);
 
 //evento click en boton
 button.addEventListener("click", handleClickButton);
 
 function handleClickButton(){
     //comprobar el numero
+    
+    let selectedNumber = parseInt(selectNumber.value);
     checkNum();
     counterMoney();
     
@@ -38,14 +39,13 @@ function handleClickButton(){
 
 //checkNum();
 function checkNum(){
-    const num = parseInt (selectNum.value);
-    console.log("the input numb " + num);
     if (num === randomNum){
         playText.innerHTML="¡Has ganado el doble de lo apostado";
-    }else if(num!==randomNum){
-        playText.innerHTML="Has perdido lo apostado:(";
+    }else{
+        playText.innerHTML="Has perdido lo apostado :(";
     }
 }
+
 function counterMoney(){
     
     const money=parseInt(inputNum.value);

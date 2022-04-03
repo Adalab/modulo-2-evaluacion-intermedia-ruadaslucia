@@ -9,37 +9,39 @@
   </head>
   <body>
     <main class="main">
-      <div class="topSelect">
-        <h1 class="title">Dados y Apuestas</h1>
-        <p class="text">Introduce aquí tu jugada:</p>
-      </div>
-      <form class="form js-form">
-        <select name="select" class="select js-selectBox">
-          <option>Qué número apuestas del 1 al 6</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-        </select>
-        <input
-          type="number"
-          placeholder="¿Cuánto apuestas?"
-          class="input js-inputNum"
-        />
-
-        <input type="button" value="Jugar" class="js-button button" />
-        <a href="./index.html"
-          ><button class="tryAgain js-tryAgain hide">
-            Vuelve a intentarlo
-          </button></a
-        >
-        <div class="downSelect">
-          <p class="paragraph js-goPlay">¡Vamos a Jugar!</p>
-          <p class="player js-moneyLeft">Saldo: 50</p>
+      <div class="container">
+        <div class="topSelect">
+          <h1 class="title">Dados y Apuestas</h1>
+          <p class="text">Introduce aquí tu jugada:</p>
         </div>
-      </form>
+        <form class="form js-form">
+          <select name="select" class="select js-selectBox">
+            <option>Qué número apuestas del 1 al 6</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+          </select>
+          <input
+            type="number"
+            placeholder="¿Cuánto apuestas?"
+            class="input js-inputNum"
+          />
+
+          <input type="button" value="Jugar" class="js-button button" />
+          <a href="./index.html"
+            ><button class="tryAgain js-tryAgain hide">
+              Vuelve a intentarlo
+            </button></a
+          >
+          <div class="downSelect">
+            <p class="paragraph js-goPlay">¡Vamos a Jugar!</p>
+            <p class="player js-moneyLeft">Saldo: 50</p>
+          </div>
+        </form>
+      </div>
     </main>
     <script src="./js/main.js"></script>
   </body>
