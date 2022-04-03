@@ -51,3 +51,7 @@
 .player {
   margin-top: 10px;
 }
+.js-balance{
+  width: 40px;
+  text-align: center;
+}
