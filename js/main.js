@@ -13,7 +13,22 @@ const maxNumber=6;
 function getRandomNumber(max) {
     return Math.ceil(Math.random() * max);
 }
+
+const randomNumber = getRandomNumber(maxNumber); 
+
+
 button.addEventListener("click", handleClickButton);
 function handleClickButton(){
-    let selectedNumber=parseInt(selectNumber.value);
+    let selectNumber=parseInt(selectNumber.value);
+    let money = parseInt(bet.value);
+    let leftoverMoney = parseInt(initialMoney.value);
+    checkNumber(selectNumber);
+    counterMoney(leftoverMoney, money, selectNumber);
+}
+function checkNumber(selectedNumber){
+    if (selectNumber === randomNumber){
+        playText.innerHTML=winText;
+    }else { 
+        playText.innerHTML=loseText;
+    }
 }
