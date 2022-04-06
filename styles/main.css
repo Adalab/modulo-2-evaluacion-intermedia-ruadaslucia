@@ -33,6 +33,11 @@
   border-radius: 3px;
   color: white;
 }
+.resetButton {
+  background-color: rgb(115, 228, 200);
+  border-radius: 3px;
+  color: white;
+}
 .tryAgain {
   background-color: rgb(115, 228, 200);
   border-radius: 3px;

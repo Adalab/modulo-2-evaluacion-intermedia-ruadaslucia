@@ -26,6 +26,7 @@
             <option value="6">6</option>
           </select>
           <!--dinero que apuestas-->
+
           <input
             class="input js-inputNum"
             type="number"
@@ -34,17 +35,15 @@
           <!--boton jugar-->
           <input type="button" value="Jugar" class="js-button button" />
           <!--boton reset-->
-          <input
-            type="button"
-            value="Vuelve a intentarlo"
-            class="js-resetButton"
-          />
+          <button class="resetButton js-resetButton">
+            Vuelve a intentarlo
+          </button>
+
           <div class="downSelect">
             <!--frase por defecto-->
             <p class="paragraph js-goPlay">¡Vamos a Jugar!</p>
-            <p class="js-saldo"></p>
             <!--dinero inicial-->
-            <p class="js-moneyLeft">50</p>
+            <p>Saldo: <span class="js-moneyLeft">50</span></p>
           </div>
         </form>
       </div>
