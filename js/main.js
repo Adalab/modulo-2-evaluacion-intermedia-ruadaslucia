@@ -1,7 +1,7 @@
 'use strict';
 
 const selectNumber = document.querySelector('.js-selectBox');
-const inputNumber = document.querySelector('.js-inputNum');
+const inputBet = document.querySelector('.js-inputNum');
 
 const leftover = document.querySelector('.js-moneyLeft');
 
@@ -10,51 +10,48 @@ const resetButton = document.querySelector('.js-resetButton');
 
 const playText = document.querySelector('.js-goPlay');
 
-const winningMessage = '¡Has ganado el doble de lo apostado :)';
-const losingMessage = 'Has perdido lo apostado :(';
+const winningMessage = '¡Has ganado el doble de lo apostado &#128513;';
+const losingMessage = 'Has perdido lo apostado &#128557;';
 
 const maxNumber = 6;
 const randomNumber = getRandomNumber(maxNumber);
 console.log(randomNumber);
 
-let leftoverMoney = parseInt(leftover.innerText);
-
-//funcion numero aleatorio
 function getRandomNumber(max) {
   return Math.ceil(Math.random() * max);
 }
 
-//eventos sobre los botones
 button.addEventListener('click', handleClickButton);
-resetButton.addEventListener('click', handleClickButton);
+resetButton.addEventListener('click', resetGame);
 
-//funcion manejadora que reune a las demas funciones
-function handleClickButton() {
+function handleClickButton(event) {
+  event.preventDefault();
+  let money = parseInt(inputBet.value);
+  let leftoverMoney = parseInt(leftover.innerText);
   let selectedNumber = parseInt(selectNumber.value);
-  let money = parseInt(inputNumber.value);
 
-  checkNum(selectedNumber);
-  counterMoney(leftoverMoney, money, selectedNumber);
-}
-
-//funcion que comprueba el numero aleatorio con el input del usuario
-function checkNum(selectedNumber) {
   if (selectedNumber === randomNumber) {
-    playText.innerHTML = winningMessage;
+    win(money, leftoverMoney);
   } else {
-    playText.innerHTML = losingMessage;
+    lose(money, leftoverMoney);
   }
 }
 
-//funcion que suma y resta las ganancias y las perdidas
-function counterMoney(leftOverMoney, money, selectedNumber) {
-  if (selectedNumber === randomNumber) {
-    leftOverMoney = leftOverMoney + money * 2;
-  } else {
-    leftOverMoney = leftOverMoney - money;
-  }
-  leftover.innerHTML = leftOverMoney;
+function resetGame() {
+  selectNumber.value = '-1';
+  inputBet.value = '';
+  leftover.innerText = '50';
+  playText.innerText = '¡Vamos a jugar!';
 }
-//borrar los comentarios y los console.log
-//usar dos funciones win(); y  lose(); y en ellas meter respectivamente el mensaje de ganar  o perder y la operacion de suma o de resta.
-function win() {}
+
+function win(money, leftoverMoney) {
+  playText.innerHTML = winningMessage;
+  leftoverMoney = leftoverMoney + money * 2;
+  leftover.innerHTML = leftoverMoney;
+}
+
+function lose(money, leftoverMoney) {
+  playText.innerHTML = losingMessage;
+  leftoverMoney = leftoverMoney - money;
+  leftover.innerHTML = leftoverMoney;
+}
