@@ -15,7 +15,7 @@ const losingMessage = 'Has perdido lo apostado &#128557;';
 
 const maxNumber = 6;
 const randomNumber = getRandomNumber(maxNumber);
-console.log(randomNumber);
+//console.log(randomNumber);
 
 function getRandomNumber(max) {
   return Math.ceil(Math.random() * max);
